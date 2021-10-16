@@ -1,0 +1,122 @@
+*, *::before, *::after {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+  border: 0;
+}
+html,
+body {
+  width: 100%;
+}
+body {
+  margin: 0 auto;
+  background-color: #25282A;
+  color: #ffffff;
+  font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+  font-weight: normal;
+}
+li {
+  list-style-type: none;
+}
+li:hover {
+  cursor: pointer;
+}
+.wrapper {
+  max-width: 80%;
+  margin: 2% auto;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  box-shadow: 0 0 20px rgba(0, 0, 0, .5);
+  border-radius: 5px;
+}
+.navigation > input {
+	display: none;
+}
+.navigation label {
+	cursor: pointer;
+  display: inline-block;
+  height: 15px;
+  width: 15px;
+  /* background-color: #73AFFA;  */
+  border-radius: 50%;
+  background-color: #73AFFA;
+  transition: background ease-in-out .5s;
+}
+
+#slide_1:checked ~ .controls label:nth-of-type(1),
+#slide_2:checked ~ .controls label:nth-of-type(2),
+#slide_3:checked ~ .controls label:nth-of-type(3),
+#slide_4:checked ~ .controls label:nth-of-type(4),
+#slide_5:checked ~ .controls label:nth-of-type(5) {
+  border: 2px solid #73AFFA;
+  background-color: transparent;
+}
+.navigation label:hover {
+  background-color: #ffffff;
+  border: 2px solid #ffffff;
+}
+.slider {
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+.slides {
+  overflow: hidden;
+  display: flex;
+  height: 80%;
+  transition: transform ease-in-out .5s, opacity ease-in-out .5s;
+}
+.slide {
+  height: 1088px;
+  width: 1020px;
+  flex-shrink: 0;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+.slide_1 {
+  background-image: url(./img/slide_1.jpg);
+}
+.slide_2 {
+  background-image: url(./img/slide_2.jpg);
+}
+.slide_3 {
+  background-image: url(./img/slide_3.jpg);
+}
+.slide_4 {
+  background-image: url(./img/slide_4.jpg);
+}
+.slide_5 {
+  background-image: url(./img/slide_5.jpg);
+}
+#slide_1:checked .slides > .slide_1,
+#slide_2:checked .slides > .slide_2,
+#slide_3:checked ~ .slider > .slide_3,
+#slide_4:checked ~ .slider > .slide_4,
+#slide_5:checked ~ .slider > .slide_5 {
+	transform: translateX(-100%);
+}
+
+.navigation {
+  height: 20%;
+  display: flex;
+}
+.controls {
+  order: 0;
+  display: flex;
+  width: 15%;
+  gap: 9%;
+}
+.slide-title {
+  order: -1;
+  width: 85%;
+  margin-left: 10px;
+  display: flex;
+  flex-shrink: 0;
+  overflow: hidden;
+}
+.title {
+  width: 1020px;
+}
+
