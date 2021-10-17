@@ -152,4 +152,19 @@ input[type=radio] {
 .title {
   width: 100%;
 }
+#slide_1:checked ~ .slide-title .title-inner {
+  transform: translateX(0%);
+}
+#slide_2:checked ~ .slide-title .title-inner {
+  transform: translateX(-20%);
+}
+#slide_3:checked ~ .slide-title .title-inner {
+  transform: translateX(-30%);
+}
+#slide_4:checked ~ .slide-title .title-inner {
+  transform: translateX(-40%);
+}
+#slide_5:checked ~ .slide-title .title-inner {
+  transform: translateX(-50%);
+}
 
